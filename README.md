@@ -1,0 +1,1 @@
+![Alt text](https://imgs.xkcd.com/comics/functional.png)
