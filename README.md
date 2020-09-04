@@ -1,1 +1,1 @@
-![Alt text](https://imgs.xkcd.com/comics/functional.png)
+[![Alt text](https://imgs.xkcd.com/comics/functional.png)](https://xkcd.com/1270/)
