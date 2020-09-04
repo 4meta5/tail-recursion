@@ -5,3 +5,10 @@ authors = ["Amar Singh <asinghchrony@protonmail.com"]
 edition = "2018"
 
 [dependencies]
+
+[dev-dependencies]
+criterion = "0.3.3"
+
+[[bench]]
+name = "benchmark"
+harness = false
