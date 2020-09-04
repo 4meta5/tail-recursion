@@ -1,0 +1,8 @@
+;; -*- Scheme -*-
+
+(alias
+ (name DEFAULT) 
+ (deps 
+  (alias_rec fac/runtest)
+  (alias_rec fib/runtest)
+  ))
