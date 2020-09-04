@@ -1,44 +1,34 @@
 open! Base
 
-let rec naive (n : int) : int =
-  if n <= 1 then 1
-  else n * (naive (n - 1));;
-
-let rec naive2 (n: int) : int = match n with
+let rec naive (n: int) : int = match n with
   | 0 -> 1
-  | n -> n * (naive2 (n - 1));;
+  | n -> n * (naive (n - 1));;
 
 (* This one uses tail recursion *)
 
-let factorial n = 
-  let rec helper acc n = if n <= 1 then acc else helper (acc * n) (n - 1)
-    in helper 1 n;;
+let optimized n = 
+  let rec helper acc n = match n with
+    | 0 -> acc
+    | 1 -> acc
+    | _ -> helper (acc * n) (n - 1)
+  in helper 1 n;;
 
 (* Writing basic tests using janestreet's test lints *)
 
 let%test "Testing factorial..." =
-  Int.equal (factorial 5) 120
+  Int.equal (optimized 5) 120
 
 let%test "Testing factorial..." =
   Int.equal (naive 5) 120
 
-let%test "Testing naive2..." =
-  Int.equal (naive2 5) 120
-
 let%test "Testing factorial..." =
-  Int.equal (factorial 10) 3628800
+  Int.equal (optimized 10) 3628800
 
 let%test "Testing factorial..." =
   Int.equal (naive 10) 3628800
 
-let%test "Testing naive2..." =
-  Int.equal (naive2 10) 3628800
+let%test "Testing factorial..." =
+  Int.equal (optimized 12) 479001600
 
 let%test "Testing factorial..." =
-  Int.equal (factorial 12) 479001600
-
-let%test "Testing factorial..." =
-    Int.equal (naive 12) 479001600
-
-let%test "Testing naive2..." =
-    Int.equal (naive2 12) 479001600
+  Int.equal (naive 12) 479001600
