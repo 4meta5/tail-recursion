@@ -5,4 +5,5 @@
  (deps 
   (alias_rec fac/runtest)
   (alias_rec fib/runtest)
+  (alias_rec qsort/runtest)
   ))
