@@ -14,3 +14,7 @@ pub fn optimized(n: u64) -> u64 {
     }
     helper(1, n)
 }
+
+pub fn fac(n: usize) -> usize {
+    (1..n + 1).fold(1, |a, b| a * b)
+}
